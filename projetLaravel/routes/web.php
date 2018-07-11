@@ -17,3 +17,5 @@ Route::get('/add-student', 'StudentsController@ajout');
 Route::post('/students', 'StudentsController@traitementAjout');
 
 Route::get('/students', 'StudentsController@afficher');
+
+Route::get('/test-students', 'StudentsController@traitementDelete');

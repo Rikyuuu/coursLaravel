@@ -35,4 +35,15 @@ class StudentsController extends Controller
             'students' => $students
         ]);
     }
+
+        // test
+        public function traitementDelete()
+        {
+            $id = 4;
+            dump(Student::where('id', $id)->get());
+            //$deleteStudent = Student::where('id', $id)->delete();
+    
+            //return redirect('/students');
+            return 'ok';
+        }
 }
