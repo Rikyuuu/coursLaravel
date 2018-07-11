@@ -210,7 +210,7 @@ Route::get('/', 'MonController@accueil');
 
 Que fait cette ligne ? Elle và appeler le contrôleur **MonController** et la function **accueil** de ce contrôleur.
 
-Si on essaye d'accéder à l'adresse `http://127.0.0.1:8000/test`
+Si on essaye d'accéder à l'adresse `http://127.0.0.1:8000`
 
 On a une erreur car le contrôleur n'existe pas encore.
 On và donc le créer avec une ligne de commande.
@@ -432,6 +432,8 @@ Cette ligne permet de dire à Laravel "Les champs firstname et lastname sont aut
 
 On peut tester :smiley: http://127.0.0.1:8000/add-student puis on vérifie dans la base de données.
 Normalement tout devrait fonctionner :relieved: !
+
+*Rappel : Le modèle Student se trouve dans `App\Student.php`.*
 
 #### Amélioration du formulaire
 
