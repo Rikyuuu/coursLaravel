@@ -37,13 +37,26 @@ class StudentsController extends Controller
     }
 
         // test
-        public function traitementDelete()
+        public function delete()
         {
-            $id = 4;
-            dump(Student::where('id', $id)->get());
+            $id = request('id');
+            dump($id);
+            $students = Student::all();
+
+            return view('students', [
+                'students' => $students
+            ]);
+            //dump(Student::where('id', $id)->get());
             //$deleteStudent = Student::where('id', $id)->delete();
     
             //return redirect('/students');
+        }
+
+        //test
+        public function traitementDelete($id)
+        {
+            Student::where('id', $id)->delete();
+
             return 'ok';
         }
 }

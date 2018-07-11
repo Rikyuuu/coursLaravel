@@ -8,5 +8,17 @@
             <li>{{ $student->firstname }} {{ $student->lastname }}</li>
         @endforeach
     </ul>
-    <p><a href="/add-student">Ajouter un étudiant</a></p>
+    <!--DEBUT test-->
+    @foreach($students as $student)
+        <form action="/{id}" method="post">
+            {{ csrf_field() }}
+            <button id="{id}">Supprimer {{ $student->lastname }}</button>
+        </form>
+    @endforeach
+        <form action="/t" method="post">
+            {{ csrf_field() }}
+            <input type="submit" value="Supp" id="{id}">
+        </form>
+    <!--FIN test-->
+    <p><a href="add-student">Ajouter un étudiant</a></p>
 @endsection
