@@ -13,7 +13,6 @@ class StudentsController extends Controller
 
     public function traitementAjout()
     {
-
         request()->validate([
             'firstname' => ['required'],
             'lastname' => ['required'],
@@ -39,9 +38,9 @@ class StudentsController extends Controller
         // test
         public function delete()
         {
-            $id = request('id');
-            dump($id);
             $students = Student::all();
+
+            dump($students);
 
             return view('students', [
                 'students' => $students
@@ -53,10 +52,13 @@ class StudentsController extends Controller
         }
 
         //test
-        public function traitementDelete($id)
+        public function traitementDelete()
         {
-            Student::where('id', $id)->delete();
-
+            //$students = Student::where('id', $id)->delete();
+            $students = Student::all();
+            
+            $deleteStudent = Student::where('id', $students->id)->delete();
+            
             return 'ok';
         }
 }

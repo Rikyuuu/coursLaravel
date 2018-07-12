@@ -20,5 +20,5 @@ Route::get('/students', 'StudentsController@afficher');
 
 //DEBUT test
 Route::get('/t', 'StudentsController@delete');
-Route::post('/{id}', 'StudentsController@traitementDelete');
+Route::post('/students/{{ $students->id }}', 'StudentsController@traitementDelete');
 //FIN test
